@@ -1,0 +1,56 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pantone-specification-mcp"
+version = "1.0.0"
+description = "MCP server for production-ready Pantone color specification - bridge layer from aesthetic domains to reproducible PMS codes"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Dal Marsters", email = "dal@lushy.app"}
+]
+keywords = [
+    "mcp",
+    "pantone",
+    "color",
+    "design",
+    "production",
+    "print",
+    "lushy",
+    "category-theory",
+    "bridge-functor"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Scientific/Engineering :: Visualization"
+]
+requires-python = ">=3.10"
+dependencies = [
+    "fastmcp>=0.1.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0"
+]
+
+[project.urls]
+Homepage = "https://lushy.app"
+Repository = "https://github.com/lushy/pantone-specification-mcp"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pantone_specification_mcp"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
